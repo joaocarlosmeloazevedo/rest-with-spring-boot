@@ -19,7 +19,20 @@ public class MathController {
 	public Double sum(
 			@PathVariable(value = "numberOne") String numberOne,//Definição das variavéis
 			@PathVariable(value = "numberTwo") String numberTwo //Definição das variavéis
-			){
-		return 1D;
+			) throws Exception{
+		
+		if (!isNumeric(numberOne) || isNumeric(numberTwo)) {
+			throw new Exception();
+		}
+		return convertToDouble(numberOne) + convertToDouble(numberTwo);
 	} 
+	
+	private Double convertToDouble(String strNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private boolean isNumeric(String strNumber) {
+		return false;
+	}
 }
